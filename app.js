@@ -65,3 +65,16 @@ $(function () {
     });
   });
 });
+
+const deck = {
+  async init() {
+    let res = await axios.get("https://deckofcardsapi.com/api/deck/new");
+    this.deckId = res.data.deck_id;
+  },
+  async shuffle() {
+    let res = await axios.get(
+      `https://deckofcardsapi.com/api/deck/${this.deckId}/shuffle`
+    );
+    console.log(res);
+  },
+};
