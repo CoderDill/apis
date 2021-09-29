@@ -52,7 +52,7 @@ $(function () {
   // 3.
   async function setup() {
     let $btn = $("button");
-    let $cards = $("#cards");
+    let $cards = $(".cards");
 
     let deckData = await $.getJSON(`${baseURL}/new/shuffle/`);
     $btn.show().on("click", async function () {
